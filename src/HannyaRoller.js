@@ -7,20 +7,20 @@ export default class HannyaRoller {
   /**
    * @param {IHannyaRollerProps} options
    */
-  constructor({ el, text }) {
+  constructor ({ el, text }) {
     this._el = el;
     this._text = text;
 
-    this._buildElements()
+    this._buildElements();
   }
 
-  start() {
+  start () {
     this._el.appendChild(this.elSpace);
     this.updateLayout();
     this._startAnimation();
   }
 
-  updateLayout() {
+  updateLayout () {
     const { length } = this._text;
     const screenWidth = this._el.clientWidth;
     const screenHeight = this._el.clientHeight;
@@ -28,12 +28,12 @@ export default class HannyaRoller {
     this._render(layout);
   }
 
-  destroy() {
+  destroy () {
     this._el.removeChild(this.elSpace);
     this.destroyAnimation();
   }
 
-  _buildElements() {
+  _buildElements () {
     this.elSpace = document.createElement('div');
     this.elSpace.classList.add('HannyaRoller-space');
 
@@ -55,7 +55,7 @@ export default class HannyaRoller {
    * @param {number} screenHeight
    * @returns {IRollerLayout}
    */
-  _findBestLayout(length, screenWidth, screenHeight) {
+  _findBestLayout (length, screenWidth, screenHeight) {
     const surfaceWidth = screenWidth * Math.PI;
     const surfaceHeight = screenHeight * 0.55;
 
@@ -82,7 +82,7 @@ export default class HannyaRoller {
   /**
    * @param {IRollerLayout} layout
    */
-  _render({
+  _render ({
     fontSize,
     nLettersInLine,
     nLines,
@@ -112,7 +112,7 @@ export default class HannyaRoller {
     });
   }
 
-  _startAnimation() {
+  _startAnimation () {
     const rpm = 2; // revolutions per minute
     const initialAnimationDuration = 3000; // from CSS
     const progressOffset = -(initialAnimationDuration / (60000 / rpm));
