@@ -4,4 +4,4 @@
 - Original: https://github.com/ginpei/hannya-roll
 
 
-https://travis-ci.org/arisa-hirata/HannyaRoll.svg?branch=master
+[![Build Status](https://travis-ci.org/arisa-hirata/HannyaRoll.svg?branch=master)](https://travis-ci.org/arisa-hirata/HannyaRoll)
